@@ -1,10 +1,12 @@
-import { Login } from "./pages/Login.jsx";
+import { AuthProvider } from "./context/AuthContext.jsx";
 import { AllRoutes } from "./routes/AllRoutes.jsx";
 
 const App = () => {
   return (
     <>
-      <AllRoutes />
+      <AuthProvider>
+        <AllRoutes />
+      </AuthProvider>
     </>
   );
 };
