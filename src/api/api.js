@@ -7,5 +7,21 @@ export const loginForm = async (formData) => {
     body: JSON.stringify(formData),
   });
 
-  return res.json();
+  return await res.json();
+};
+
+export const fetchCategoriesAPI = async () => {
+  const res = await fetch(`${API}/products/categories`);
+
+  return await res.json();
+};
+
+export const fetchProductsAPI = async (category) => {
+  const url =
+    category === "all"
+      ? `${API}/products`
+      : `${API}/products/category/${encodeURIComponent(category)}`;
+  const res = await fetch(url);
+
+  return await res.json();
 };
