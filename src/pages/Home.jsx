@@ -43,9 +43,9 @@ export const Home = () => {
   };
 
   const handleProductClick = (id) => {
-    console.log(id);
+    // console.log(id);
 
-    navigate("/home");
+    navigate(`/product/${id}`);
   };
 
   useEffect(() => {
@@ -97,7 +97,7 @@ export const Home = () => {
             >
               <img src={product.image} alt={product.title} />
               <h4>{product.title}</h4>
-              <p>${product.price}</p>
+              <p>$ {product.price}</p>
             </div>
           ))}
         </div>

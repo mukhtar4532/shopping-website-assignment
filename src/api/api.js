@@ -25,3 +25,18 @@ export const fetchProductsAPI = async (category) => {
 
   return await res.json();
 };
+
+export const fetchProductDetailsAPI = async (id) => {
+  try {
+    const res = await fetch(`${API}/products/${id}`);
+    console.log(res);
+
+    const data = await res.json();
+    console.log("route solved: ", data);
+
+    return data;
+  } catch (error) {
+    console.error("Error fetching product details: ", error);
+    return null;
+  }
+};
