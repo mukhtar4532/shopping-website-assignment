@@ -17,7 +17,6 @@ export const Home = () => {
   const fetchCategories = async () => {
     try {
       const data = await fetchCategoriesAPI();
-      console.log(data);
       setCategories(["all", ...data]);
     } catch (error) {
       console.log("Error from data fetching ", error);
@@ -29,7 +28,6 @@ export const Home = () => {
   const fetchProducts = async (category) => {
     setLoading(true);
     const data = await fetchProductsAPI(category);
-    console.log(data);
     setProducts(data);
     setLoading(false);
   };

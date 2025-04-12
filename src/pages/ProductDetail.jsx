@@ -1,18 +1,20 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { fetchProductDetailsAPI } from "../api/api.js";
 import "./Page.css";
+import { CartContext } from "../context/CartContext.jsx";
 
 export const ProductDetail = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
 
   const { id } = useParams();
+  const { addToCart } = useContext(CartContext);
 
   const fetchProductDetails = async () => {
     try {
       const data = await fetchProductDetailsAPI(id);
-      console.log(data);
+
       setProduct(data);
       setLoading(false);
     } catch (error) {
@@ -21,7 +23,7 @@ export const ProductDetail = () => {
   };
 
   const handleAddToCart = () => {
-    alert("Product added to cart!");
+    addToCart(product);
   };
 
   useEffect(() => {

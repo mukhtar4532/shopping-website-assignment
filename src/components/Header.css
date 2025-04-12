@@ -1,0 +1,52 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.cart-count {
+  background: #fff;
+  color: black;
+  font-weight: bold;
+  padding: 2px 8px;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  margin-left: 5px;
+}
+
+.logout-btn {
+  background: black;
+  border: 2px solid black;
+  padding: 6px 12px;
+  border-radius: 4px;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.logout-btn:hover {
+  background-color: white;
+  color: black;
+  border: 2px solid white;
+}

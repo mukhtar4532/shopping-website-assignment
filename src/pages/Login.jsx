@@ -6,7 +6,10 @@ import "./Page.css";
 
 export const Login = () => {
   const [error, setError] = useState("");
-  const [formData, setFormData] = useState({ username: "", password: "" });
+  const [formData, setFormData] = useState({
+    username: "mor_2314",
+    password: "83r5^_",
+  });
 
   const navigate = useNavigate();
   const { login } = useContext(AuthContext);
